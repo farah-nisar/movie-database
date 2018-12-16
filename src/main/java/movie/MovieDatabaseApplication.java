@@ -1,13 +1,16 @@
+package movie;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import resources.MovieResource;
 
 public class MovieDatabaseApplication extends Application<MovieDatabaseConfiguration> {
-
+	public static void main(String[] args) throws Exception {
+		new MovieDatabaseApplication().run(args);
+	}
 	@Override
 	public void run(MovieDatabaseConfiguration configuration, Environment environment) throws Exception {
-		// TODO Auto-generated method stub
-
+		environment.jersey().register(new MovieResource());
 	}
 	
 	@Override
