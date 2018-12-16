@@ -27,6 +27,10 @@ public class Movie {
 	
 	private String[] genres;
 	
+	public Movie() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Movie(long id, String title, DateTime releaseDate, String language, int runningTime) {
 		super();
 		this.id = id;
