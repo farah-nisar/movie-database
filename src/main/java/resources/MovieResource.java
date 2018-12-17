@@ -30,12 +30,12 @@ public class MovieResource {
 	
 	@GET
 	@Path("{id}")
-	public Movie getMovieById(@PathParam("id") long id) {
+	public static Movie getMovieById(@PathParam("id") long id) {
 		return MOVIES_COLLECTION.get(id);
 	}
 
 	@POST
-	public void createMovie(Movie movie) {
+	public static void createMovie(Movie movie) {
 		MOVIES_COLLECTION.put(movie.getId(), movie);
 	}
 	

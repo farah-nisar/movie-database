@@ -11,6 +11,7 @@ public class MovieDatabaseApplication extends Application<MovieDatabaseConfigura
 	@Override
 	public void run(MovieDatabaseConfiguration configuration, Environment environment) throws Exception {
 		environment.jersey().register(new MovieResource());
+		environment.healthChecks().register("Generic Health Check", new MovieDatabaseHealthCheck());
 	}
 	
 	@Override
